@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { withAuthenticator } from "@aws-amplify/ui-react";
+import { useState } from "react";
+import API from "./API";
+import "./styles/App.css";
+import Input from "./Components/Input";
+import WeatherDisplay from "./Components/WeatherDisplay";
 
-function App() {
+const App = ({ user }) => {
+  const { jwtToken } = user.signInUserSession.idToken;
+  localStorage.setItem("token", jwtToken);
+  const [weatherData, setWeatherData] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
+  const getWeatherData = async (city) => {
+    try {
+      setErrorMessage("");
+      const { data } = await API.getCurrentWeather(city);
+      setWeatherData(data);
+    } catch (err) {
+      const { message } = err.response.data;
+      setErrorMessage(message);
+    }
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Input getWeatherData={getWeatherData} />
+      {errorMessage && <span className="error">{errorMessage}</span>}
+      {Object.keys(weatherData).length > 0 &&
+      <WeatherDisplay weatherData={weatherData} />}
     </div>
   );
-}
+};
 
-export default App;
+export default withAuthenticator(App);

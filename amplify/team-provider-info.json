@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-openweather-dev-124132-authRole",
+      "UnauthRoleArn": "arn:aws:iam::505387085894:role/amplify-openweather-dev-124132-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::505387085894:role/amplify-openweather-dev-124132-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-openweather-dev-124132-deployment",
+      "UnauthRoleName": "amplify-openweather-dev-124132-unauthRole",
+      "StackName": "amplify-openweather-dev-124132",
+      "StackId": "arn:aws:cloudformation:eu-west-1:505387085894:stack/amplify-openweather-dev-124132/90e6b3f0-1ed1-11ed-9b75-0616b4cee83b",
+      "AmplifyAppId": "dsskwnsuj5bp2"
+    },
+    "categories": {
+      "auth": {
+        "openWeatherApp": {}
+      }
+    }
+  }
+}

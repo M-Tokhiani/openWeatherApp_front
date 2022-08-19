@@ -1,0 +1,23 @@
+.display-container{
+    width: 400px;
+    padding: 2rem 1rem;
+}
+
+.info{
+    border: 2px solid #eee;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 0.7rem 0.8rem;
+    margin-top: 1rem;
+}
+
+h2{
+    padding: 2px;
+    text-transform: capitalize;
+    color: #ff5353;
+}
+
+h4{
+    font-weight: 400;
+    text-transform: capitalize;
+}
