@@ -14,6 +14,21 @@
     background-color: #C4DDFF;
 }
 
+.signOutBtn {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    padding: 6px 14px;
+    border: 1px solid #adabab;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #9c9c9c;
+}
+
+.signOutBtn:hover {
+    background-color: #dd4848;
+}
+
 .error{
     color: #FF3333;
     font-size: 16px;
