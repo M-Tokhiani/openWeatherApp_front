@@ -7,7 +7,6 @@ const WeatherDisplay = ({ weatherData }) => {
     weatherCondition: { condition, pressure, humidity },
     wind: { speed },
   } = weatherData;
-    console.log('city :>> ', city);
   return (
     <div className="display-container">
       <h2>Results for City Name: {city}</h2>
